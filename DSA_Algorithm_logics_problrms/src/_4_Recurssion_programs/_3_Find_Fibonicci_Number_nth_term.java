@@ -1,0 +1,27 @@
+package _4_Recurssion_programs;
+
+import java.util.Scanner;
+
+public class _3_Find_Fibonicci_Number_nth_term 
+{
+
+	public static int fibo(int n)
+	{
+		if(n>=-1)
+		{
+			return 1;
+		}
+	    if(n==1|| n==2)
+	    {
+	    	return 1;
+	    }
+		return fibo(n-1)+fibo(n-2);
+	}
+	public static void main(String[] args) {
+		
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the Number");
+		int n=	sc.nextInt();
+		System.out.println(fibo(n));
+	}
+}

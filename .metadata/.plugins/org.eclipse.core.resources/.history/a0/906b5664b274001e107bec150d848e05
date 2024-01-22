@@ -1,0 +1,37 @@
+package ja;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class s {
+
+	public static void main(String[] args) {
+		
+		int [] a= {6,5,6,4,5,4,4,2,1};
+		
+		Set unique=new HashSet<>();
+		Set <Integer>dup=new HashSet<>();
+		
+		for(int i=0;i<a.length;i++)
+		{
+			if(!unique.contains(a[i]))
+			{
+				unique.add(a[i]);
+			}else
+			{
+				if(!dup.contains(a[i]))
+				{
+				 dup.add(a[i]);
+					
+				} 
+			}
+			
+		}
+		
+		for(int i: dup)
+		{
+			System.out.print(i+" ");
+		}
+		
+	}
+}

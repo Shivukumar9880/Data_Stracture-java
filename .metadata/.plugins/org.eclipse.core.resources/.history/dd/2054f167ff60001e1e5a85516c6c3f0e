@@ -1,0 +1,34 @@
+package _5_Array_Problems_Tap_Tap_Academay;
+
+public class _C_3_Binary_Search_Algorithm_For_Descending_Sorted_Array {
+
+	public static int binarySearchForDesceindingSortedArray(int[] a,int key)
+	{
+		int low=0;
+		int high=a.length-1;
+		int mid=0;
+		while(low<=high) 
+		{
+			mid=(low+high)/2;
+
+			if(key==a[mid])
+			{
+				return mid;
+			}
+			else if(key<a[mid])
+			{
+				high=mid-1;
+			}
+			else {
+				low=mid+1;
+			}
+				
+		}
+		return -1;
+	}
+	public static void main(String[] args) {
+		int a[]= {100,30,20,15,10,6,5,4};
+		int key=10;
+		System.out.println(binarySearchForDesceindingSortedArray(a, key));
+	}
+}

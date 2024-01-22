@@ -1,0 +1,87 @@
+package _5_Array_Problems_Tap_Tap_Academay;
+
+
+
+public class _F_5_FInding_Ceil_Floor_Of_An_Array {
+	/**
+	 * ceil of an array means ->search the ceil element in array if that element found return that element .if element not found  return next highest Element compare to ceil element
+	 * 
+	 *  Note:-To Find Ceil Element in Array we If face Exception problem because in the ciel element index of the array that element not found then it try to return next highest element but there is no Element at that particular index 
+	 *  
+	 *  Ciel And Floor Work only for Sorted Array
+	 */
+	/**
+	 * Floor of an arraay :-search Floor Element in array if that element found return That element .if That Element not found Then return its Previous Element that is less then Floor Element.
+	 * Note :-To Find Floor of Element we face Exception problem because in the floor element index first index then that eleemnt not found then try to return its previous element  but there is no elemets at that index
+	 */
+	
+	
+	public static int ciel(int [] a,int key)
+	{
+		int low=0;int high=a.length; int mid=0;
+		
+		while(low<=high)
+		{
+			mid=(low+high)/2;
+			if(key==a[mid])
+			{
+				return a[mid];
+			}
+			else if(key<mid)
+			{
+				high=mid-1;
+			}else
+			{
+				low=mid+1;
+			}
+		}
+		
+		if(low!=-1)
+		{
+			return a[low];
+		}else
+		{
+			return -1;
+		}
+			
+	}
+	public static int floor(int [] a,int key)
+	{
+		int low=0;int high=a.length; int mid=0;
+		
+		while(low<=high)
+		{
+			mid=(low+high)/2;
+			if(key==a[mid])
+			{
+				return a[mid];
+			}
+			else if(key<mid)
+			{
+				high=mid-1;
+			}else
+			{
+				low=mid+1;
+			}
+		}
+		
+		if(high!=-1)
+		{
+			return a[high];
+		}else
+		{
+			return -1;
+		}
+			
+	}
+	
+	public static void main(String[] args) {
+		
+		int a[]= {5,10,15,20,35,40,45,50,55,100};
+		int key=50;
+		System.out.println(ciel(a, key));
+	}
+	
+}
+
+

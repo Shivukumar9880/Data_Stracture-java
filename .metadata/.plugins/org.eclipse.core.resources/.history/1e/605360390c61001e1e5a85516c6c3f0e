@@ -1,0 +1,31 @@
+package _5_Array_Problems_Tap_Tap_Academay;
+
+public class _D_4_Finding_Span_Of_An_Array {
+
+	public static int spanOfAnArray(int [] a)
+	{
+		int min=a[0];
+		int max=a[0];
+
+		for(int i=0;i<a.length;i++)
+		{
+			if(a[i]>max)
+			{
+				max=a[i];
+			}
+			if(a[i]<min)
+			{
+				min=a[i];
+			}
+		}
+
+		return max-min;
+	}
+	
+	public static void main(String[] args) {
+		
+		int a[]= {10,2,5,78,3,9,4,99,7,5,8};
+		
+		System.out.println(spanOfAnArray(a));
+	}
+}

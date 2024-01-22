@@ -1,0 +1,37 @@
+package _4_Recurssion_programs;
+
+import java.util.Scanner;
+
+public class _11_Generate_Balanced_Paranthesis_Using_recurssion
+{
+
+	public static void balPar(char[] ar,int n,int i,int o,int c)
+	{
+		if(i==ar.length)
+		{
+			System.out.println(ar);//character array we can print directly no need to traverse it  
+		}
+		
+		if(o<n)
+		{
+			ar[i]='(';
+			balPar(ar,n,i+1,o+1,c);
+		}
+		if(c<o)
+		{
+			ar[i]=')';
+			balPar(ar,n,i+1,o,c+1);
+		}	
+	}
+	public static void main(String[] args) {
+		
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter value of n");
+		int n=sc.nextInt();
+		int i=0;
+		int o=0;
+		int c=0;
+		balPar(new char[n*2], n, i, o, c);
+		System.out.println("these are all posible combinations of paranthesis");
+	}
+}

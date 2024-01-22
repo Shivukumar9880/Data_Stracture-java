@@ -1,0 +1,19 @@
+package _4_Recurssion_programs;
+
+public class _9_Find_Power_Of_Number_Using_Recurssion 
+{
+	public static long pow1(int x,int y)
+	{
+		if(y==0)
+		{
+			return 1;
+		}
+		
+		return x*pow1(x,y-1);
+	}
+	public static void main(String[] args) {
+		
+		System.out.println(pow1(5,8));
+	}
+
+}

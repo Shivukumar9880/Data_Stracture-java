@@ -1,0 +1,29 @@
+package _4_Recurssion_programs;
+
+public class _11_Generate_Balanced_Paranthesis_Using_recurssion
+{
+
+	public static void balPar(int[] ar,int n,int i,int o,int c)
+	{
+		if(i==ar.length)
+		{
+			System.out.println(ar);//character array we can print directly no need to traverse it  
+		}
+		
+		if(o<n)
+		{
+			ar[i]=')';
+			balPar(ar,n,i+1,o+1,c);
+		}
+		if(c<o)
+		{
+			ar[i]='(';
+			balPar(ar,n,i+1,o,c+1);
+		}	
+	}
+	public static void main(String[] args) {
+		
+		int n=2;
+		balPar(new int[n*2], n, 0, 0, 0);
+	}
+}

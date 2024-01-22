@@ -1,0 +1,49 @@
+package _4_Recurssion_programs;
+
+import java.util.concurrent.TimeUnit;
+
+public class _9_Find_Power_Of_Number_Using_Recurssion 
+{
+	public static long pow1(int x,int y)
+	{
+		if(y==0)
+		{
+			return 1;
+		}
+
+		return x*pow1(x,y-1);
+	}
+	public static long pow2(int x,int y)
+	{
+		if(y==0)
+		{
+			return 1;
+		}
+		if(y%2==0)
+		{
+			return pow2(x,y/2)*pow2(x,y/2);
+		}else
+		{
+			return x*pow1(x,y-1);
+		}
+
+	}
+	public static void main(String[] args) {
+		long startTime = System.nanoTime();
+		System.out.println(pow1(5,8));
+		long endTime = System.nanoTime();
+		long  x=endTime-startTime;
+		long elapsedTimeInMilliseconds = TimeUnit.NANOSECONDS.toMillis(x);
+		System.out.println(elapsedTimeInMilliseconds);
+
+		System.out.println();
+		System.out.println("------------------------------");
+
+		long start = System.currentTimeMillis();
+		System.out.println(pow1(5,8));
+		long end = System.currentTimeMillis();
+		System.out.println(start+"   "+end);
+
+	}
+
+}

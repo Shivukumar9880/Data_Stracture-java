@@ -1,0 +1,23 @@
+package _4_Recurssion_programs;
+
+public class _10_Lucky_Number_Program_using_Recurssion 
+{
+
+	 public static boolean isluckyNumber(int n,int counter)
+	 {
+		 if(n<counter)
+		 {
+			 return true;
+		 }
+		 if(n%counter==0)
+		 {
+			 return false;
+		 }
+		 return isluckyNumber(n-(n/counter),counter++);
+	 }
+	 
+	 public static void main(String[] args) {
+		
+		 System.out.println(isluckyNumber(13, 2));
+	}
+}

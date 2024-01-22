@@ -1,0 +1,59 @@
+package _9_Tree_Data_Stracure;
+
+public class BinaryTree {
+
+	TreeNode root;
+	
+	class TreeNode
+	{
+		
+		TreeNode left;
+		TreeNode right;
+		int data;//this generic we can use any type of data like int,String,char or Object
+		
+		public TreeNode(int data)
+		{
+			this.data=data;
+			this.left=null;
+			this.right=null;
+		}
+	}
+	
+	public void createBinaryTree()
+	{
+		TreeNode first=new TreeNode(9);
+		TreeNode second=new TreeNode(5);
+		TreeNode third=new TreeNode(4);
+		TreeNode fourth=new TreeNode(8);
+		TreeNode fifth=new TreeNode(10);
+		
+		//createing binary tree by chaining them
+		
+		root=first;
+		first.left=second;//    second<-----first----->third
+		first.right=third;
+		second.left=fourth;
+		second.right=fifth;//  fouth<-------SECOND------->fifth
+		
+	}
+	
+	//----------------------pre-order binary traversal using recurssion----------------------------
+	public void preOrder(TreeNode root)
+	{
+		if(root==null)
+		{
+			return;
+		}
+		System.out.print(root.data+" ");
+		preOrder(root.left);
+		preOrder(root.right);
+	}
+	
+	public static void main(String[] args) {
+		
+		BinaryTree bt = new BinaryTree();
+		bt.createBinaryTree();
+	    bt.preOrder(bt.root);
+		
+	}
+}

@@ -1,0 +1,25 @@
+package _4_Recurssion_programs;
+
+public class _10_Lucky_Number_Program_using_Recurssion 
+{
+
+	 public static boolean isluckyNumber(int n,int counter)
+	 {
+		 if(n<counter)
+		 {
+			 return true;
+		 }
+		 if(n%counter==0)
+		 {
+			 return false;
+		 }
+		 return isluckyNumber(n-(n/counter),counter+1);
+	 }
+	 
+	 public static void main(String[] args) {
+		if(isluckyNumber(13, 2))
+		   System.out.println( "is Lucky Number");
+		else
+			System.out.println("is Not Lucky Number");
+	}
+}
